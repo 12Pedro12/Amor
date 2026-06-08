@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Para Ti ❤️</title>
+
+<style>
+body{
+    background:#ffb6d9;
+    text-align:center;
+    font-family:Arial;
+    padding-top:50px;
+}
+
+img{
+    width:250px;
+    border-radius:20px;
+}
+
+h1{
+    color:#d81b60;
+}
+.corazon{
+  position: fixed;
+  font-size: 20px;
+  color: #e91e63;
+  top: -20px;
+  animation: caer 4s linear infinite;
+  z-index: 1;
+}
+@keyframes caer{
+  to {transform: translateY(105vh) rotate(360deg); opacity: 0;}
+}
+</style>
+</head>
+
+<body>
+
+<h1>❤️ Te Amo Muchísimo ❤️</h1y>
+<br>
+<img src="amor.jpg" alt="Nuestra Foto">
+
+<p>
+Gracias por estar conmigo.<br>
+Eres la persona más especial de mi vida. 💕
+</p>
+
+<audio autoplay controls>
+    <source src="TuyYo.mp3" type="audio/mpeg">
+</audio>
+
+<script> 
+ function lanzarCorazones(){
+   for( let i = 0; i < 40; i++){
+     const corazon = document.createElement('div');
+     corazon.className = 'corazon';
+     corazon.innerHTML = '❤️';
+     corazon.style.left = Math.random() * 100 + 'vw';
+     corazon.style.animationDelay = Math.random() * 2 + 's';
+     corazon.style.fontSize = Math.random() * 15 + 10 + 'px';
+     document.body.appendChild(corazon);
+     setTimeout(() => corazon.remove(), 4000);
+   }
+ }
+ window.onload = () =>{
+   setTimeout(lanzarCorazones, 800);
+ }
+</script>
+</body>
+</html>
